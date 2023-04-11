@@ -55,13 +55,11 @@ class CourseDetailsView extends StatelessWidget {
               ),
             ),
             ListTile(
-              title: Text(
-                courseName,
-              ),
+              title: Text(courseName, style: TextStyle(fontSize: 32)),
             ),
             const Divider(),
             ListTile(
-              title: Text("Youtube Links"),
+              title: Text("Youtube Videos:", style: TextStyle(fontSize: 24)),
             ),
             FutureBuilder(
               future: _getYtLinks(),
@@ -96,7 +94,7 @@ class CourseDetailsView extends StatelessWidget {
             ),
             const Divider(),
             ListTile(
-              title: Text("Blogs"),
+              title: Text("Blogs", style: TextStyle(fontSize: 24)),
             ),
             FutureBuilder(
               future: _getBlogLinks(),

@@ -3,8 +3,10 @@ import 'package:eyic/global/colors.dart';
 import 'package:eyic/screens/community/communities_home_screen.dart';
 import 'package:eyic/screens/marketplace/marketplace_home_screen.dart';
 import 'package:eyic/screens/mentee/connections_page/connections_page.dart';
+import 'package:eyic/screens/mentee/contact_us_view/contact_us_view.dart';
 import 'package:eyic/screens/mentee/courses_view/courses_view.dart';
 import 'package:eyic/screens/mentee/home_view/widgets/home_drawer.dart';
+import 'package:eyic/screens/report_abuse/report_abuse_view.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -262,12 +264,20 @@ class _MenteeDashboardViewState extends State<MenteeDashboardView> {
                 ),
                 const Divider(),
                 ListTile(
-                  onTap: () {},
+                  onTap: () {
+                    Get.to(
+                      ReportAbuseView(),
+                    );
+                  },
                   title: const Text("Report Abuse"),
                   trailing: const Icon(Icons.arrow_forward_ios),
                 ),
                 ListTile(
-                  onTap: () {},
+                  onTap: () {
+                    Get.to(
+                      ContactUsView(),
+                    );
+                  },
                   title: const Text("Contact us"),
                   trailing: const Icon(Icons.arrow_forward_ios),
                 ),
@@ -295,7 +305,7 @@ class _MenteeDashboardViewState extends State<MenteeDashboardView> {
         //       Get.offNamed('/');
         //     },
         //     icon: Icon(Icons.home)),
-        title: const Text("Mentorspace"),
+        title: const Text("Project_Gurukul"),
       ),
       body: _currentView(_currentScreenIndex),
       bottomNavigationBar: BottomNavigationBar(

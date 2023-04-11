@@ -53,28 +53,28 @@ class HomeDrawer extends StatelessWidget {
             title: const Text("Chats"),
             trailing: const Icon(Icons.chat),
           ),
-          ListTile(
-            onTap: () => Get.toNamed('perks_view'),
-            title: const Text("MentorSpace Perks"),
-            trailing: const Icon(Icons.card_giftcard),
-          ),
-          ListTile(
-            onTap: () => Get.toNamed('connection_page'),
-            title: const Text("Connections"),
-            trailing: const Icon(Icons.handshake),
-          ),
-          ListTile(
-            onTap: () => Get.toNamed('connection_page'),
-            title: const Text("MarketPlace"),
-            trailing: const Icon(Icons.shop),
-          ),
+          // ListTile(
+          //   onTap: () => Get.toNamed('perks_view'),
+          //   title: const Text("MentorSpace Perks"),
+          //   trailing: const Icon(Icons.card_giftcard),
+          // ),
+          // ListTile(
+          //   onTap: () => Get.toNamed('connection_page'),
+          //   title: const Text("Connections"),
+          //   trailing: const Icon(Icons.handshake),
+          // ),
+          // ListTile(
+          //   onTap: () => Get.toNamed('marketplace'),
+          //   title: const Text("MarketPlace"),
+          //   trailing: const Icon(Icons.shop),
+          // ),
           ListTile(
             onTap: () => Get.toNamed('contact_us'),
             title: const Text("Contact us"),
             trailing: const Icon(Icons.contact_support_sharp),
           ),
           ListTile(
-            onTap: () => Get.toNamed('/feedback_form'),
+            onTap: () => Get.toNamed('/feedback'),
             title: const Text("Feedback"),
             trailing: const Icon(Icons.format_italic),
           ),

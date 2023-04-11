@@ -49,7 +49,7 @@ class ConnectionsPage extends StatelessWidget {
                                     context: context,
                                     builder: ((context) {
                                       return Container(
-                                        color: Colors.white,
+                                        color: Colors.transparent,
                                         child: MentorSelectionForm(),
                                       );
                                     }),

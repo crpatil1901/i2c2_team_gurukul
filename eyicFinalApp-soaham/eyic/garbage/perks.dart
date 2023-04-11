@@ -3,7 +3,7 @@ import 'package:eyic/api/models/course_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../api/models/perks_model.dart';
+import 'perks_model.dart';
 
 class PerksView extends StatelessWidget {
   const PerksView({super.key});
