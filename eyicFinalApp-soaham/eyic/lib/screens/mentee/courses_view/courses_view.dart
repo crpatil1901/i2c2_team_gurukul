@@ -34,10 +34,16 @@ class CoursesView extends StatelessWidget {
                       height: 150,
                       child: Row(
                         children: [
-                          const Flexible(
+                          Flexible(
                             flex: 1,
                             fit: FlexFit.tight,
-                            child: Placeholder(),
+                            child: Placeholder(
+                              child: Image.asset(
+                                "assets/coursesWallpaper.jpg",
+                                height: 200,
+                                fit: BoxFit.fitHeight,
+                              ),
+                            ),
                           ),
                           Flexible(
                             flex: 3,

@@ -65,7 +65,12 @@ class LandingView extends StatelessWidget {
           body: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Text("Welcome to MentorSpace!"),
+              const Text(
+                "PROJECT_GURUKUL",
+                style: TextStyle(fontSize: 48),
+              ),
+              const SizedBox(height: 30),
+              const Text("Welcome to Project_Gurukul!"),
               const SizedBox(height: 14),
               const Text("Please sign in or sign up to enter the platform"),
               const SizedBox(height: 14),

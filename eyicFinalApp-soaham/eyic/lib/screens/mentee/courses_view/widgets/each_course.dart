@@ -1,5 +1,6 @@
 import 'dart:html';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:eyic/screens/mentor/contribution_view.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -54,8 +55,23 @@ class CourseDetailsView extends StatelessWidget {
                 fit: BoxFit.fitHeight,
               ),
             ),
-            ListTile(
-              title: Text(courseName, style: TextStyle(fontSize: 32)),
+            Row(
+              children: [
+                Flexible(
+                  flex: 8,
+                  child: ListTile(
+                    title: Text(courseName, style: TextStyle(fontSize: 36)),
+                  ),
+                ),
+                Flexible(
+                    flex: 2,
+                    child: ElevatedButton(
+                        //style: ButtonStyle()
+                        onPressed: () {
+                          Get.to(ContributionView());
+                        },
+                        child: Text("Contribute"))),
+              ],
             ),
             const Divider(),
             ListTile(
@@ -129,7 +145,7 @@ class CourseDetailsView extends StatelessWidget {
             ),
             const Divider(),
             ListTile(
-              title: Text("Resources"),
+              title: Text("Other Resources", style: TextStyle(fontSize: 24)),
             ),
             FutureBuilder(
               future: _getOtherLinks(),
