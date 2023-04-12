@@ -309,9 +309,9 @@ class _MenteeDashboardViewState extends State<MenteeDashboardView> {
       ),
       body: _currentView(_currentScreenIndex),
       bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
+        items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            backgroundColor: bgColor,
+            backgroundColor: Theme.of(context).colorScheme.primary,
             icon: Icon(Icons.person),
             label: 'Profile',
           ),

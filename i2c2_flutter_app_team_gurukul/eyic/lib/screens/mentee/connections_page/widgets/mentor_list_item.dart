@@ -11,9 +11,9 @@ class MentorListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: const Icon(
+      leading: Icon(
         Icons.person,
-        color: primary,
+        color: Theme.of(context).colorScheme.primary,
       ),
       title: Text(mentor.name),
       subtitle: Text(mentor.description),

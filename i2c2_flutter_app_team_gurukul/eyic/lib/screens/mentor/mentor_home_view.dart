@@ -222,9 +222,9 @@ class _MentorDashboardViewState extends State<MentorDashboardView> {
       bottomNavigationBar: BottomNavigationBar(
         //backgroundColor: bgColor,
         //unselectedIconTheme: IconTheme(data: IconThemeData(color: Colors.black)),
-        items: const <BottomNavigationBarItem>[
+        items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            backgroundColor: bgColor,
+            backgroundColor: Theme.of(context).colorScheme.primaryContainer,
             icon: Icon(Icons.person),
             label: 'Profile',
           ),
