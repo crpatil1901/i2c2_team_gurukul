@@ -43,12 +43,19 @@ class RootWidget extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        primaryColor: primary,
+        primaryColorDark: bgColor,
+        primaryColorLight: textColor,
+        scaffoldBackgroundColor: bgColor,
+        //accentColor: primary,
+        canvasColor: bgColor,
         backgroundColor: bgColor,
         fontFamily: "Poppins",
         brightness: Brightness.dark,
         appBarTheme: const AppBarTheme(
           backgroundColor: primary,
         ),
+        buttonTheme: ButtonThemeData(buttonColor: primary),
         textButtonTheme: TextButtonThemeData(
           style: ButtonStyle(
             foregroundColor: MaterialStateProperty.all(textColor),

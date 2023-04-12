@@ -209,9 +209,9 @@ class MentorSelectionForm extends StatelessWidget {
                     ),
                   ),
                   Obx(() => ListTile(
-                        title: const Text('Male'),
+                        title: const Text('male'),
                         leading: Radio<String>(
-                          value: 'Male',
+                          value: 'male',
                           groupValue:
                               mentorSelectionFormController.gender.value,
                           onChanged: (String? value) {
@@ -221,9 +221,9 @@ class MentorSelectionForm extends StatelessWidget {
                       )),
                   Obx(
                     (() => ListTile(
-                          title: const Text('Female'),
+                          title: const Text('female'),
                           leading: Radio<String>(
-                            value: 'Female',
+                            value: 'female',
                             groupValue:
                                 mentorSelectionFormController.gender.value,
                             onChanged: (String? value) {

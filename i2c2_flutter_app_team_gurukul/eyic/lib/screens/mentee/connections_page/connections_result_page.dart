@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:eyic/api/models/mentor_model.dart';
 import 'package:eyic/api/services/firebase/mentor_database.dart';
@@ -12,6 +14,48 @@ import 'widgets/mentor_list_item.dart';
 class ConnectionsResultPage extends StatelessWidget {
   ConnectionsResultPage({super.key});
   final MentorDB mentorDB = Get.put(MentorDB());
+
+  final MentorSelectionFormController mentorSelectionFormController =
+      Get.find();
+
+  Future<List<MentorModel>> getResultMentors() async {
+    /*final MentorSelectionFormController mentorSelectionFormController =
+        Get.put(MentorSelectionFormController())*/
+    log(mentorSelectionFormController.gender.value);
+    var data = await FirebaseFirestore.instance.collection("users").get();
+    // log(data.docs
+    //     .where((element) => element['languages'].toList().contains("english"))
+    //     .toList()
+    //     .toString());
+    var temp = data.docs
+        .where((element) => element['role'] == 'mentor' ? true : false)
+        .where((element) =>
+            element['gender'] == mentorSelectionFormController.gender.value
+                ? true
+                : false)
+        .where((element) => element['age'] >=
+                    int.tryParse(mentorSelectionFormController
+                        .startingAgeController.value.text) ??
+                0
+            ? true
+            : false)
+        .where((element) => element['age'] <=
+                    int.tryParse(mentorSelectionFormController
+                        .endingAgeController.value.text) ??
+                0
+            ? true
+            : false)
+        .where((element) => element['languages'].toList().contains("english"))
+        //.where((element) => element['languages'].toList().contains("english"))
+        .toList();
+
+    var list = <MentorModel>[];
+    for (var i = 0; i < temp.length; i++) {
+      list.add(MentorModel.fromMap(temp[i].data()));
+    }
+    return list;
+  }
+
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
@@ -124,30 +168,4 @@ class ConnectionsResultPage extends StatelessWidget {
       }),
     );
   }
-}
-
-Future<List<MentorModel>> getResultMentors() async {
-  final MentorSelectionFormController mentorSelectionFormController =
-      Get.put(MentorSelectionFormController());
-  var data = await FirebaseFirestore.instance.collection("users").get();
-  var temp = data.docs
-      .where((element) => element['role'] == 'mentor' ? true : false)
-      .where((element) =>
-          element['gender'] == /*mentorSelectionFormController.gender*/ "female"
-              ? true
-              : false)
-      /*.where((element) => element['age'] >=
-              mentorSelectionFormController.startingAgeController.toString()
-          ? true
-          : false)
-      .where((element) => element['age'] <=
-              mentorSelectionFormController.endingAgeController.toString()
-          ? true
-          : false)*/
-      .toList();
-  var list = <MentorModel>[];
-  for (var i = 0; i < temp.length; i++) {
-    list.add(MentorModel.fromMap(temp[i].data()));
-  }
-  return list;
 }
