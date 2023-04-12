@@ -90,7 +90,7 @@ class FeedbackView extends StatelessWidget {
                           RoundedRectangleBorder(
                             side: BorderSide(
                               color: _feedbackCtr.interaction
-                                  ? primary
+                                  ? Theme.of(context).colorScheme.primary
                                   : Colors.grey,
                             ),
                           ),
@@ -108,7 +108,7 @@ class FeedbackView extends StatelessWidget {
                           RoundedRectangleBorder(
                             side: BorderSide(
                               color: _feedbackCtr.interaction
-                                  ? primary
+                                  ? Theme.of(context).colorScheme.primary
                                   : Colors.grey,
                             ),
                           ),

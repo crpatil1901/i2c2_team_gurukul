@@ -43,44 +43,12 @@ class RootWidget extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: primary).copyWith(
-          background: bgColor,
-          brightness: Brightness.light,
-        ),
+        colorScheme: lightColorScheme,
         fontFamily: "Poppins",
-        appBarTheme: const AppBarTheme(
-          backgroundColor: primary,
-        ),
-        textButtonTheme: TextButtonThemeData(
-          style: ButtonStyle(
-            foregroundColor: MaterialStateProperty.all(textColor),
-            textStyle: MaterialStateProperty.all(
-              const TextStyle(
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ),
-        ),
       ),
       darkTheme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: primary).copyWith(
-          background: bgColor,
-          brightness: Brightness.dark,
-        ),
+        colorScheme: darkColorScheme,
         fontFamily: "Poppins",
-        appBarTheme: const AppBarTheme(
-          backgroundColor: primary,
-        ),
-        textButtonTheme: TextButtonThemeData(
-          style: ButtonStyle(
-            foregroundColor: MaterialStateProperty.all(textColor),
-            textStyle: MaterialStateProperty.all(
-              const TextStyle(
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ),
-        ),
       ),
       initialRoute: "/",
       getPages: [

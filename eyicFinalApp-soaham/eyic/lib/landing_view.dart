@@ -62,44 +62,69 @@ class LandingView extends StatelessWidget {
           );
         }
         return Scaffold(
-          body: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const Text(
-                "PROJECT_GURUKUL",
-                style: TextStyle(fontSize: 48),
-              ),
-              const SizedBox(height: 30),
-              const Text("Welcome to Project_Gurukul!"),
-              const SizedBox(height: 14),
-              const Text("Please sign in or sign up to enter the platform"),
-              const SizedBox(height: 14),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 128.0),
-                child: SizedBox(
-                  width: double.infinity,
-                  child: ElevatedButton(
-                    onPressed: () {
-                      Get.offNamed('/sign_in');
-                    },
-                    child: const Text("Sign In"),
-                  ),
+          body: Center(
+            child: Card(
+              color: Theme.of(context).colorScheme.primaryContainer,
+              elevation: 100,
+              child: Padding(
+                padding: const EdgeInsets.all(48.0),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "PROJECT_GURUKUL",
+                      style: Theme.of(context).textTheme.headlineLarge,
+                    ),
+                    const SizedBox(height: 30),
+                    Text("Welcome to Project_Gurukul!",
+                        style: Theme.of(context).textTheme.headlineSmall),
+                    const SizedBox(height: 14),
+                    const Text(
+                        "Please sign in or sign up to enter the platform"),
+                    const SizedBox(height: 14),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                          width: 128,
+                          height: 32,
+                          child: FilledButton(
+                            onPressed: () {
+                              Get.offNamed('/sign_in');
+                            },
+                            child: const Text("Sign In"),
+                          ),
+                        ),
+                        SizedBox(width: 16),
+                        Container(
+                          width: 128,
+                          height: 32,
+                          child: OutlinedButton(
+                            style: ButtonStyle(
+                              shape: MaterialStateProperty.all<
+                                  RoundedRectangleBorder>(
+                                RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(50.0),
+                                  side: BorderSide(
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .primary),
+                                ),
+                              ),
+                            ),
+                            onPressed: () {
+                              Get.offNamed('/sign_up');
+                            },
+                            child: const Text("Sign Up"),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
               ),
-              const SizedBox(height: 14),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 128.0),
-                child: SizedBox(
-                  width: double.infinity,
-                  child: ElevatedButton(
-                    onPressed: () {
-                      Get.offNamed('/sign_up');
-                    },
-                    child: const Text("Sign Up"),
-                  ),
-                ),
-              ),
-            ],
+            ),
           ),
         );
       },
