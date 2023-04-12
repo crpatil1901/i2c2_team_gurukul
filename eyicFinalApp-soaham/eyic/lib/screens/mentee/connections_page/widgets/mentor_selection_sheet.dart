@@ -1,3 +1,4 @@
+import 'package:eyic/screens/mentee/connections_page/connections_result_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -299,7 +300,11 @@ class MentorSelectionForm extends StatelessWidget {
               ],
             ),
           ),
-          ElevatedButton(onPressed: () {}, child: Text("Submit")),
+          ElevatedButton(
+              onPressed: () {
+                Get.to(ConnectionsResultPage());
+              },
+              child: Text("Submit")),
           Divider(
             indent: screenSize.width * 0.15,
             endIndent: screenSize.width * 0.15,

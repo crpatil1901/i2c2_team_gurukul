@@ -21,11 +21,10 @@ class SignInView extends StatelessWidget {
             color: primary,
             child: const Center(
               child: Text(
-                "Mentorspace",
+                "Project_Gurukul",
                 style: TextStyle(
                   fontSize: 28,
                   fontWeight: FontWeight.bold,
-               
                 ),
               ),
             ),

@@ -83,6 +83,11 @@ class HomeDrawer extends StatelessWidget {
             title: const Text("Report abuse"),
             trailing: const Icon(Icons.report),
           ),
+          ListTile(
+            onTap: () => Get.toNamed('contribution'),
+            title: const Text("Contribution"),
+            trailing: const Icon(Icons.help),
+          ),
           StreamBuilder(
             stream: _authCtr.userChanges,
             builder: (context, AsyncSnapshot<User?> snapshot) {

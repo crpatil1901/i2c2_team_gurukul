@@ -13,7 +13,9 @@ class MentorDB {
 
   Future<List<MentorModel>> getMentors() async {
     var data = await _firestore.collection("users").get();
-    var temp = data.docs.where((element) => element['role'] == 'mentor' ? true : false).toList();
+    var temp = data.docs
+        .where((element) => element['role'] == 'mentor' ? true : false)
+        .toList();
     var list = <MentorModel>[];
     for (var i = 0; i < temp.length; i++) {
       list.add(MentorModel.fromMap(temp[i].data()));

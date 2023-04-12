@@ -12,6 +12,7 @@ import 'package:eyic/screens/mentee/courses_view/widgets/each_course.dart';
 //import '../garbage/course_detail_view.dart';
 import 'package:eyic/screens/mentee/home_view/mentee_home_view.dart';
 import 'package:eyic/screens/mentee/profile_view/profile_view.dart';
+import 'package:eyic/screens/mentor/contribution_view.dart';
 import 'package:eyic/screens/mentor/mentor_home_view.dart';
 import 'package:eyic/screens/report_abuse/report_abuse_view.dart';
 //import '../garbage/perks.dart';
@@ -42,15 +43,15 @@ class RootWidget extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        //backgroundColor: bgColor,
+        backgroundColor: bgColor,
         fontFamily: "Poppins",
         brightness: Brightness.dark,
         appBarTheme: const AppBarTheme(
-          backgroundColor: Color(0xffff6b00),
+          backgroundColor: primary,
         ),
         textButtonTheme: TextButtonThemeData(
           style: ButtonStyle(
-            foregroundColor: MaterialStateProperty.all(Colors.white),
+            foregroundColor: MaterialStateProperty.all(textColor),
             textStyle: MaterialStateProperty.all(
               const TextStyle(
                 fontWeight: FontWeight.bold,
@@ -105,6 +106,11 @@ class RootWidget extends StatelessWidget {
           name: "/abuse",
           title: 'Report Abuse',
           page: () => const ReportAbuseView(),
+        ),
+        GetPage(
+          name: "/contribution",
+          title: 'Contribution',
+          page: () => const ContributionView(),
         ),
         GetPage(
           name: "/feedback",
