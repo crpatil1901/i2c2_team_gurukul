@@ -45,10 +45,12 @@ class RootWidget extends StatelessWidget {
       theme: ThemeData(
         colorScheme: lightColorScheme,
         fontFamily: "Poppins",
+        useMaterial3: true,
       ),
       darkTheme: ThemeData(
         colorScheme: darkColorScheme,
         fontFamily: "Poppins",
+        useMaterial3: true,
       ),
       initialRoute: "/",
       getPages: [
